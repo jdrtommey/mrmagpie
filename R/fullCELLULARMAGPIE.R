@@ -178,10 +178,10 @@ fullCELLULARMAGPIE <- function(rev = numeric_version("0.1"), dev = "",
                climatetype = climatetype, round = 2, years = lpjYears, file = paste0("lpj_yields_", ctype, ".mz"),
                weighting = "crop+irrigSpecific", indiaYields = TRUE, scaleFactor = 0.5)
 
-    calcOutput("OzoneShock", aggregate = "cluster",
+    calcOutput("OzoneYieldShock", aggregate = "cluster",
       weighting = "crop+irrigSpecific",
       years = lpjYears,
-      file = paste0("lpj_yields_ozone", ctype, ".cs3")
+      file = paste0("lpj_yields_ozone_", ctype, ".cs3")
     )
 
   } else {
@@ -196,10 +196,10 @@ fullCELLULARMAGPIE <- function(rev = numeric_version("0.1"), dev = "",
                climatetype = climatetype, round = 2, years = lpjYears, file = paste0("lpj_yields_", ctype, ".mz"),
                weighting = ifelse(grepl("YieldWeights_", dev), gsub("YieldWeights_", "", dev), "totalCrop"))
 
-    calcOutput("OzoneShock", aggregate = "cluster",
+    calcOutput("OzoneYieldShock", aggregate = "cluster",
       weighting = ifelse(grepl("YieldWeights_", dev)),
       years = lpjYears,
-      file = paste0("lpj_yields_ozone", ctype, ".cs3")
+      file = paste0("lpj_yields_ozone_", ctype, ".cs3")
     )
   }
 
